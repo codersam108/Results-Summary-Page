@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Results summary component</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@200&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    body{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      height:95vh;
+    }
+    .outer{
+      width:600px;
+      height:400px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      box-shadow:5px 5px 5px hsl(0, 40%, 94%);
+      
+
+    }
+    #result{
+      background-image:linear-gradient(hsl(252, 100%, 67%),hsl(241, 81%, 54%));
+      border-radius: 6%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+    }
+    .your{
+      font-family: "Hanken Grotesk", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style:normal;
+      color:hsl(241, 100%, 89%);
+      padding:30px ;
+    }
+    .circle{
+      width:150px;
+      height:150px;
+      background-image:linear-gradient(hsla(256, 72%, 46%, 1),hsla(241, 72%, 46%, 0));
+      border-radius: 50%;
+      text-align: center;
+      /* display: flex;
+      justify-content: center;
+      align-items: center; */
+      
+
+    }
+    #no{
+      font-family: "Hanken Grotesk", sans-serif;
+      font-size:xx-large;
+      font-weight: 700;
+      font-style: normal;
+      font-size: xxx-large;
+      color:white;
+    }
+    #out{
+      color:hsl(242, 100%, 81%);
+      font-family: "Hanken Grotesk", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 300;
+      font-style: normal;
+      font-size:small;
+    }
+    .great{
+      font-family: "Hanken Grotesk", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+      font-size: large;
+      width:200px
+    }
+    .great>h2{
+      margin-bottom: 0px;
+    }
+    .great>p{
+      font-family: "Hanken Grotesk", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 200;
+      font-style: normal;
+      font-size: 15px;
+  
+
+
+    }
+    #summary{
+      
+     display: flex;
+     justify-content: center;
+     align-items: center;
+      border-radius: 5%;
+    }
+    .summary_1{
+      width:200px;
+      height:350px;
+    }
+    .reaction{
+      padding:10px;
+      font-family: "Hanken Grotesk", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+     background-color:hsl(0, 47%, 94%);
+     border-radius: 5px;
+     color:hsl(0, 100%, 73%);
+     display: flex;
+     gap:8px;
+     margin-top:10px;
+  
+    }
+    .memory{
+      padding:10px;
+      font-family: "Hanken Grotesk", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+     background-color:hsl(39, 72%, 93%);
+     border-radius: 5px;
+     color:hsl(39, 89%, 75%);
+     display: flex;
+     gap:8px;
+     margin-top:10px;
+    }
+    .verbal{
+      padding:10px;
+      font-family: "Hanken Grotesk", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+     background-color:hsl(165, 100%, 93%);
+     border-radius: 5px;
+     color:hsl(166, 100%, 37%);
+     display: flex;
+     margin-top:10px;
+    }
+    .visual{
+      padding:10px;
+      font-family: "Hanken Grotesk", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+     background-color:hsl(269, 70%, 90%);
+     border-radius: 5px;
+     color:hsl(234, 100%, 59%);
+     display: flex;
+     gap:8px;
+     margin-top:10px;
+    }
+    .btn{
+      margin-top: 75px;
+      padding:10px;
+      width:210px;
+      border-radius: 50px;
+      color:white;
+      background-color:hsl(233, 74%, 17%);
+
+    }
+
+
+  </style>
+</head>
+<body>
+   <div class="outer">
+    <div id="result">
+      <div class="your">Your Result</div>
+  <div class="circle" style="display: flex;flex-direction: column;justify-content: center;"><div id="no">76</div><div id="out">of 100</div></div>
+  <div class="great"><h2 style="color:white;text-align: center;">Great</h2><p style="color:hsl(241, 87%, 88%);text-align: center;">  You scored higher than 65% of the people who have taken these tests.</p></div>
+      </div>
+    <div id="summary">
+      <div class="summary_1"><h2 style="margin-top: 0px;font-family: Hanken Grotesk, sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style:normal;font-size: large;">Summary</h2>
+        <div class="reaction"><img src="./shs.png" width="20"/><div>Reaction</div><div style="color: black;font-size: small;margin-left: 30px;margin-top: 3px;">80 <span style="color:hsl(241, 100%, 89%)"> / 100</span></div></div>
+        <div class="memory"><img src="./brain.png" width="20"/><div>Memory</div><div style="color: black;font-size: small;margin-left: 33px;margin-top: 3px;">92 <span style="color:hsl(241, 100%, 89%)"> / 100</span></div></div>
+        <div class="verbal"><img src="./message.png" width="20"/><div>Verbal</div><div style="color: black;font-size: small;margin-left: 44px;margin-top: 3px;">61 <span style="color:hsl(241, 100%, 89%)"> / 100</span></div></div>
+        <div class="visual"><img src="./eye.png" width="20"/><div>Visual</div><div style="color: black;font-size: small;margin-left: 44px;margin-top: 3px;">72 <span style="color:hsl(241, 100%, 89%)"> / 100</span></div></div>
+        <button class="btn">Continue</button>
+      </div>
+   </div>
+  <!-- Your Result ̰
+  76
+  of 100
+
+  Great
+  You scored higher than 65% of the people who have taken these tests.
+  
+  Summary
+
+  Reaction
+  80 / 100
+
+  Memory
+  92 / 100
+
+  Verbal
+  61 / 100
+
+  Visual
+  72 / 100
+
+  Continue -->
+  
+ 
+  
+</body>
+</html>
